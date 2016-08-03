@@ -119,8 +119,8 @@ class Client(object):
         """
         for param in transaction_params:
             if param not in DATA:
-                raise ValueError(u"The received parameter %s is not allowed."
-                                 % param)
+                raise ValueError(u"The received parameter %s is not allowed." %
+                                 param)
             setattr(self, param, transaction_params[param])
         if not transaction_params.get('DS_MERCHANT_MERCHANTDATA'):
             self.DS_MERCHANT_MERCHANTDATA = None
