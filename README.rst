@@ -4,6 +4,9 @@ Sydres - Redsys Client
 .. image:: https://travis-ci.org/alexbarcelo/sydres.svg?branch=master
     :target: https://travis-ci.org/alexbarcelo/sydres
 
+.. image:: https://coveralls.io/repos/github/alexbarcelo/sydres/badge.svg?branch=master
+    :target: https://coveralls.io/github/alexbarcelo/sydres
+
 ATTENTION
 ---------
 
