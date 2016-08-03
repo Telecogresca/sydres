@@ -1,4 +1,11 @@
+Sydres - Redsys Client
+----------------------
+
+.. image:: https://travis-ci.org/alexbarcelo/sydres.svg?branch=master
+    :target: https://travis-ci.org/alexbarcelo/sydres
+
 ATTENTION
+---------
 
 This is a fork of:
 
