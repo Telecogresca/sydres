@@ -5,13 +5,21 @@ cache:
 python:
   - "2.6"
   - "2.7"
-  - "3.2"
-  - "3.3"
-  - "3.4"
-  - "3.5"
-  - "3.5-dev"
-  - "nightly" # currently points to 3.6-dev
+#  - "3.2"
+#  - "3.3"
+#  - "3.4"
+#  - "3.5"
+#  - "3.5-dev"
+#  - "nightly" # currently points to 3.6-dev
+
 # dependencies
-install: "python setup.py install"
+install:
+  - pip install coveralls
+  - python setup.py install
+
 # command to run tests
-script: nosetests
+script:
+  - coverage run $(which nosetests)
+
+after_success:
+  - coveralls
