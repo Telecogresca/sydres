@@ -72,7 +72,7 @@ class Client(object):
         :return Ds_MerchantParameters: Encoded json structure with all parameters
         """
         parameters = (json.dumps(merchant_parameters)).encode()
-        return ''.join(base64.encodestring(parameters).splitlines())
+        return ''.join(base64.encodebytes(parameters).decode().splitlines())
 
     def decode_parameters(self, Ds_MerchantParameters):
         """
