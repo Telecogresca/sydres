@@ -83,7 +83,7 @@ class Client(object):
         """
 
         Ds_MerchantParameters_decoded = base64.standard_b64decode(Ds_MerchantParameters)
-        return json.loads(Ds_MerchantParameters_decoded)
+        return json.loads(Ds_MerchantParameters_decoded.decode())
 
     def encrypt_order_with_3DES(self, Ds_Merchant_Order):
         """
