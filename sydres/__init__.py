@@ -107,7 +107,7 @@ class Client(object):
         :param Ds_MerchantParameters: Redsys aleready encoded parameters
         :return Ds_Signature: Generated signature encoded in base64
         """
-        hmac_value = hmac.new(order_encrypted, Ds_MerchantParameters.encode(), hashlib.sha256).digest()
+        hmac_value = hmac.new(order_encrypted, Ds_MerchantParameters, hashlib.sha256).digest()
         return base64.b64encode(hmac_value)
 
     def redsys_generate_request(self, transaction_params):
@@ -174,7 +174,7 @@ class Client(object):
         merchant_parameters = self.decode_parameters(Ds_MerchantParameters)
         order = merchant_parameters['Ds_Order']
         order_encrypted = self.encrypt_order_with_3DES(order)
-        Ds_Signature_calculated = self.sign_hmac256(order_encrypted, Ds_MerchantParameters)
+        Ds_Signature_calculated = self.sign_hmac256(order_encrypted, Ds_MerchantParameters.encode())
 
         alphanumeric_characters = re.compile('[^a-zA-Z0-9]')
         Ds_Signature_safe = re.sub(alphanumeric_characters, '', Ds_Signature)
