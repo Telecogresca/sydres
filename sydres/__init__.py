@@ -95,7 +95,7 @@ class Client(object):
         :return  order_encrypted: The encrypted order
         """
         pycrypto = DES3.new(base64.standard_b64decode(self.secret_key), DES3.MODE_CBC, IV=b'\0\0\0\0\0\0\0\0')
-        order_padded = Ds_Merchant_Order.ljust(16, b'\0')
+        order_padded = Ds_Merchant_Order.encode().ljust(16, b'\0')
         return pycrypto.encrypt(order_padded)
 
     def sign_hmac256(self, order_encrypted, Ds_MerchantParameters):
