@@ -13,7 +13,7 @@ import hashlib
 import json
 import base64
 import hmac
-import ast
+import json
 from Crypto.Cipher import DES3
 
 DATA = [
@@ -83,7 +83,7 @@ class Client(object):
         """
 
         Ds_MerchantParameters_decoded = base64.standard_b64decode(Ds_MerchantParameters)
-        return ast.literal_eval(Ds_MerchantParameters_decoded)
+        return json.loads(Ds_MerchantParameters_decoded)
 
     def encrypt_order_with_3DES(self, Ds_Merchant_Order):
         """
