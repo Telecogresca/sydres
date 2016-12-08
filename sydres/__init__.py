@@ -176,9 +176,9 @@ class Client(object):
         order_encrypted = self.encrypt_order_with_3DES(order)
         Ds_Signature_calculated = self.sign_hmac256(order_encrypted, Ds_MerchantParameters.encode())
 
-        alphanumeric_characters = re.compile('[^a-zA-Z0-9]')
-        Ds_Signature_safe = re.sub(alphanumeric_characters, '', Ds_Signature)
-        Ds_Signature_calculated_safe = re.sub(alphanumeric_characters, '', Ds_Signature_calculated)
+        alphanumeric_characters = re.compile(b'[^a-zA-Z0-9]')
+        Ds_Signature_safe = re.sub(alphanumeric_characters, b'', Ds_Signature)
+        Ds_Signature_calculated_safe = re.sub(alphanumeric_characters, b'', Ds_Signature_calculated)
         if Ds_Signature_safe  == Ds_Signature_calculated_safe:
             return True
         else:
