@@ -177,7 +177,7 @@ class Client(object):
         Ds_Signature_calculated = self.sign_hmac256(order_encrypted, Ds_MerchantParameters.encode())
 
         alphanumeric_characters = re.compile(b'[^a-zA-Z0-9]')
-        Ds_Signature_safe = re.sub(alphanumeric_characters, b'', Ds_Signature)
+        Ds_Signature_safe = re.sub(alphanumeric_characters, b'', Ds_Signature.encode())
         Ds_Signature_calculated_safe = re.sub(alphanumeric_characters, b'', Ds_Signature_calculated)
         if Ds_Signature_safe  == Ds_Signature_calculated_safe:
             return True
