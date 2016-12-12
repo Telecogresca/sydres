@@ -1,32 +1,37 @@
 Sydres - Redsys Client
 ----------------------
 
-.. image:: https://travis-ci.org/alexbarcelo/sydres.svg?branch=master
-    :target: https://travis-ci.org/alexbarcelo/sydres
+.. image:: https://travis-ci.org/Telecogresca/sydres.svg?branch=master
+    :target: https://travis-ci.org/Telecogresca/sydres
 
-.. image:: https://coveralls.io/repos/github/alexbarcelo/sydres/badge.svg?branch=master
-    :target: https://coveralls.io/github/alexbarcelo/sydres
 
 ATTENTION
 ---------
 
-This is a fork of:
+This started as a fork of:
 
 https://bitbucket.org/zikzakmedia/python-redsys
 
-The focus is adding Python 3 support and some minor improvements.
+The focus is adding Python 3 support and some related minor improvements.
 
-Credit to the original author, which can be found in the Bitbucket URL.
+Credit to the original author, Zikzakmedia which can be found in the Bitbucket
+URL. Special thanks to that project, and also to all the people who have made 
+this project possible.
+
+If you intend to use Python 2.x, better check the original project.
 
 Redsys client
 ~~~~~~~~~~~~~
 
-Credit payments to the Redsys service.
+This software is used in order to perform credit card payments to the Redsys
+service.
+
+To use this mechanism you need first to have Redsys configured for your "store".
 
 Requirements
 ------------
 
-* Python 2.7
+* Python 3.x
 
 Installation
 ------------
@@ -35,26 +40,26 @@ Through pip:
 
 .. code-block:: python
 
-    pip install redsys
+    pip install sydres
 
 or easy_install:
 
 .. code-block:: python
 
-    easy_install redsys
+    easy_install sydres
     
-or download the source, un-tar/un-zip it, cd into redsys, and:
+or, from source, install it through:
 
 .. code-block:: python
 
-    python setup.py install
+    python ./setup.py install
 
 Quick Start
 -----------
 
 .. code-block:: python
 
-    from redsys import Client
+    from sydres import Client
 
     SANDBOX = True
     REDSYS_MERCHANT_URL = 'http://www.zikzakmedia.com'
@@ -83,9 +88,3 @@ Quick Start
     redsyspayment = Client(business_code=REDSYS_MERCHANT_CODE, secret_key=REDSYS_SECRET_KEY, sandbox=SANDBOX)
     redsys_form = redsyspayment.redsys_generate_request(values)
 
-Thanks
-------
-
-* Thanks `Eduard Carreras <https://bitbucket.org/ecarreras/>`_ to start python-sermepa package.
-* Thanks `Álvaro Vélez <https://github.com/alvarovelezgalvez>`_ and `Jordi Colell <https://github.com/jordic>`_
-  to develop new signature Redsys HMAC-256 (`Django-sermepa <https://github.com/alvarovelezgalvez/django-sermepa/>`_).
