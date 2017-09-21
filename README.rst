@@ -1,10 +1,6 @@
 Sydres - Redsys Client
 ----------------------
 
-.. image:: https://travis-ci.org/Telecogresca/sydres.svg?branch=master
-    :target: https://travis-ci.org/Telecogresca/sydres
-
-
 ATTENTION
 ---------
 
